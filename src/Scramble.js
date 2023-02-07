@@ -1,11 +1,9 @@
+import React from "react";
 import "./App.css";
-import React from 'react';
 import { useState } from "react";
 import Draggable from "react-draggable";
 
-export default function Box(props) {
-
-
+export default function Scramble(props) {
   const eventHandler = (e, data) => {
     console.log("Event Type", e.type);
     console.log({ e, data });
@@ -20,13 +18,12 @@ export default function Box(props) {
 
   return (
     <>
-    <p> Match the following words </p>
-
+      <p> Unscramble the following words </p>
       {Object.entries(vocab).map((word, index) => {
         return (
           // <div key={index}>
 
-          <div className="main" key = {index}>
+          <div className="main" key={index}>
             <Draggable onDrag={eventHandler}>
               <div
                 className="box"
@@ -39,7 +36,7 @@ export default function Box(props) {
                 {word[0]}
               </div>
             </Draggable>
-                <div className="box"></div>
+            <div className="box"></div>
             <Draggable onDrag={eventHandler}>
               <div
                 className="box"
@@ -56,7 +53,6 @@ export default function Box(props) {
           </div>
         );
       })}
-      <footer><img src="Logo.png" alt="Logo" height="50"></img></footer>
     </>
   );
 }

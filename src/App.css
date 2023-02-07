@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila&display=swap');
+
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Laila';
+  color: white;
 }
 
 /* .App-logo {
@@ -25,7 +29,7 @@
 } */
 
 .main {
-  width: 600px;
+  width: 400px;
   display: flex;
   flex-direction: row;
   /* max-width: 450px; */
@@ -34,10 +38,24 @@
   text-align: center;
   gap: 30px;
 }
+
+.home {
+  width: 400px;
+  height: 600px;
+  border: 2px double white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+ background-color: #EA3C12;
+}
+
+.menu {
+  border: 2px solid white;
+}
 .box {
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 5px;
-  height: max-content;
+  height: 30px;
   width: 100px;
   display: flex;
   flex-direction: row;
