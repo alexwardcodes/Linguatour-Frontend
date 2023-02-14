@@ -1,10 +1,12 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import Login from "./Login";
+import Box from "./Box";
+import Scramble from "./Scramble";
 
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -48,24 +50,29 @@ const Home = () => {
 
   return (
     <div>
-      <img
-        src="linguatour-high-resolution-color-logo.jpeg"
-        height="300"
-        alt="Logo"
-      ></img>
-
       {isLoggedIn ? (
         <>
-          {" "}
-          <button onClick={handleLogout}>Logout</button>{" "}
+          <img
+            src="linguatour-high-resolution-color-logo.jpeg"
+            height="300"
+            alt="Logo"
+          ></img>
+          <Link to="/">Home</Link>&nbsp;
+          <Link to="/box">Box Game</Link>&nbsp;
+          <Link to="/scramble">Scramble Game</Link>&nbsp;
+          <Link onClick={handleLogout}>Logout</Link>
         </>
       ) : (
         <>
-          {" "}
+          <img
+            src="linguatour-high-resolution-color-logo.jpeg"
+            height="300"
+            alt="Logo"
+          ></img>
           <p>Log in to get learning</p> <Login></Login>
           <p />
           Or have a play around<br></br>
-          <button>Test out Linguatour</button>{" "}
+          <button>Test out Linguatour</button>
         </>
       )}
     </div>

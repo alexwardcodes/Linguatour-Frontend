@@ -20,6 +20,7 @@ export default function Box(props) {
 
   return (
     <>
+    <p></p>
     <p> Match the following words </p>
 
       {Object.entries(vocab).map((word, index) => {
@@ -56,7 +57,6 @@ export default function Box(props) {
           </div>
         );
       })}
-      <footer><img src="Logo.png" alt="Logo" height="50"></img></footer>
     </>
   );
 }
